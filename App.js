@@ -6,8 +6,8 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, StatusBar, TextInput, Dimensions,ScrollView } from 'react-native';
+import React, {Component} from 'react'
+import {Platform, StyleSheet, Text, View, StatusBar, TextInput, Dimensions, ScrollView } from 'react-native'
 import ToDo from "./ToDo"
 
 const { height, width } = Dimensions.get("window")
@@ -17,15 +17,15 @@ const instructions = Platform.select({
   android:
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
-});
+})
 
 
 export default class App extends Component {
   state = {
     newToDo: ""
-  }
+    }
   render() {
-    const { newToDo } = this.state;
+    const { newToDo } = this.state
     return (
       <View style={styles.container}>
         <StatusBar barstyle="light-content" />
@@ -37,11 +37,11 @@ export default class App extends Component {
             autoCorrect={false}
            />
            <ScrollView contentContainerStyle={styles.toDos}>
-            <ToDo />
+            <ToDo text={"Hello I'm a To Do"} />
            </ScrollView>
         </View>
       </View>
-    );
+    )
   }
   _contollNewToDo = text => {
     this.setState({
@@ -105,4 +105,4 @@ const styles = StyleSheet.create({
   toDos: {
     alignItems:"center"
   }
-});
+})
